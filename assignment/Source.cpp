@@ -5,6 +5,7 @@
 using namespace std;
 int reverse()	// opt = 2
 {
+	// need to update; use array.
 	//eqn
 	// a=a*10+(x%10)
 	// x/=10
@@ -58,7 +59,7 @@ int prime()	// opt = 1
 }
 
 
-void sum()	//opt = 3
+int sum()	//opt = 3
 {
 	//sum loader
 	int num, total;
