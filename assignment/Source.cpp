@@ -3,7 +3,7 @@
 #include <iostream>
 
 using namespace std;
-int reverse()
+int reverse()	// opt = 2
 {
 	//eqn
 	// a=a*10+(x%10)
@@ -29,7 +29,7 @@ int reverse()
 	return 0;
 }
 
-int prime()
+int prime()	// opt = 1
 {
 	int num, i, p;
 
@@ -58,7 +58,7 @@ int prime()
 }
 
 
-void sum()
+void sum()	//opt = 3
 {
 	//sum loader
 	int num, total;
@@ -74,10 +74,40 @@ void sum()
 
 int main()
 {
-	reverse();
-	system("pause");
-	prime();
-	system("pause");
-	sum();
+	int opt;
+	printf("Choose an operation\n press 1 for Prime number\n press 2 to reverse the number\n press 3 for summation\n press 0 to exit\n");
+	scanf("%d", &opt);
+
+	while (opt != 0)
+	{
+		if (opt == 1)
+		{
+			prime();
+			system("pause");
+			
+		}
+		else if (opt == 2)
+		{
+			reverse();
+			system("pause");
+			
+		}
+		else if (opt == 3)
+		{
+			sum();
+			system("pause");
+			
+		}
+		else
+		{
+			printf("Invalid option !!\n");
+			system("pause");
+			
+		}
+		printf("Choose an operation\n press 1 for Prime number\n press 2 to reverse the number\n press 3 for summation\n press 0 to exit\n");
+		scanf("%d", &opt);
+	}
+	printf("press enter to exit\n");
+	//system("pause");
 	return 0;
 }
