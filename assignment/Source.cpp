@@ -3,8 +3,24 @@
 #include <iostream>
 
 using namespace std;
+int revArray()
+{
+	int rev[6] = {};
+	int sum = 0;
+	for (int i = 0; i < 7; i++)
+	{
+		printf("Enter a value ");
+		scanf("%d", (rev+i));	
+	}
+	for (int i = 7 - 1; i >= 0; i--)
+	{
+		printf("%d\t\n", rev[i]);
+	}
+	return 0;
+}
 int reverse()	// opt = 2
 {
+	
 	// need to update; use array.
 	//eqn
 	// a=a*10+(x%10)
@@ -71,10 +87,12 @@ int sum()	//opt = 3
 		total = num + total;
 	}
 	cout << total << endl;
+	return 0;
 }
 
 int main()
 {
+	
 	int opt;
 	printf("Choose an operation\n press 1 for Prime number\n press 2 to reverse the number\n press 3 for summation\n press 0 to exit\n");
 	scanf("%d", &opt);
