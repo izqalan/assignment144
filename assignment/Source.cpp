@@ -3,7 +3,7 @@
 
 int revArray()	// wip. need help. stack error. var rev corrupted
 {
-	int rev[6] = {};
+	int rev[6] = {};	
 	int sum = 0;
 	for (int i = 0; i < 7; i++)
 	{
