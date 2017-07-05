@@ -3,14 +3,14 @@
 
 int revArray()	// wip. need help. stack error. var rev corrupted
 {
-	int rev[6] = {};	
+	int rev[6] = {};
 	int sum = 0;
 	for (int i = 0; i < 7; i++)
 	{
 		printf("Enter a value ");
 		scanf_s("%d", (rev + i));
 	}
-	for (int i = 7 - 1; i >= 0; i--)
+	for (int i = 6; i >= 0; i--)
 	{
 		printf("reversed number %d\t\n", rev[i]);
 	}
@@ -53,15 +53,16 @@ int primeFactors()   //opt = 1
 		// 3rd digit
 		if (n > 2)
 		{
-			printf("%d = %d\n ", n, oldnum);
+			printf("%d", n);
 
 		}
+		printf(" = %d\n", oldnum);
 	}
 
 	return 0;
 }
 
-
+/*
 int reverse()	// opt = 2
 {
 	// need to update; use array.
@@ -87,15 +88,16 @@ int reverse()	// opt = 2
 
 	printf("reverse number is %d", rev);
 	return 0;
-}
+} */
 
 int sum()	//opt = 3
 {
-	//sum loader
+	
 	int num, total;
 	total = 0;
 	for (int i = 0; i < 7; i++)
 	{
+		//sum loader
 		printf("Enter a positive integers\n");
 		scanf_s("%d", &num);
 		total = num + total;
@@ -107,7 +109,7 @@ int sum()	//opt = 3
 int main()
 {
 	int opt;
-	printf("Choose an operation\n press 1 for Prime number\n press 2 to reverse the number\n press 3 for summation\n press 0 to exit\n");
+	printf("Choose an operation\n press 1 for Prime factors\n press 2 to reverse the number\n press 3 for summation\n press 0 to exit\n");
 	scanf_s("%d", &opt);
 
 	while (opt != 0)
@@ -119,7 +121,7 @@ int main()
 		}
 		else if (opt == 2)
 		{
-			reverse();
+			revArray();
 			system("pause");
 		}
 		else if (opt == 3)
