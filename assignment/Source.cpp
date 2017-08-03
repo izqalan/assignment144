@@ -1,112 +1,75 @@
 #include <stdio.h>
 #include <iostream>
 
-
-int revArray()	// fixed
+int sum(int arr [7])
 {
-	int rev[7] = {};
-	int sum = 0;
+	int total = 0;
 	for (int i = 0; i < 7; i++)
 	{
-		printf("Enter a value ");
-		scanf_s("%d", (rev + i));
+		total = total + arr[i];
 	}
+	return total;
+}
+void revArray(int arr[7])
+{
+	printf("Reversed number is: ");
 	for (int i = 7 - 1; i >= 0; i--)
 	{
-		printf("reversed number %d\t\n", rev[i]);
+		printf("%d, ", arr[i]);
 	}
-	return 0;
 }
 
-int primeFactors()   //opt = 1
+int primeFactors(int arr[7])
 {
-	int i;
-	for (i = 0; i < 7; i++)
-	{
-		int n = 0;
-		printf("\nEnter positive int ");
-		scanf_s("%d", &n);
-		int oldnum = n;		// saving user input number
-		printf("The prime factor is\t");
-		// Print the number of 2s that divide n
-		// 1st digit
-		while (n % 2 == 0)		//2 % 2 = 0
-		{
-			printf("%d X ", 2);
-			n = n / 2;
-		}
+	int i = 2, n = 0;
 
-		// n must be odd at this point. So we can skip 
-		// one element (Note i = i + 2)
-		// 2nd digit
-		for (int i = 3; i <= sqrt(n); i = i + 2)
+	for (int a = 0; a < 7; a++)
+	{
+		n = arr[a];
+		while (n != 1)
 		{
-			// While i mod n, print i and divide n
 			while (n%i == 0)
 			{
-				printf("%d X ", i);
+				printf("%d ", i);
 				n = n / i;
 			}
+			
 		}
-
-		// This condition is to handle the case when n 
-		// is a prime number greater than 2
-		// 3rd digit
-		if (n > 2)
-		{
-			printf("%d = %d\n ", n, oldnum);
-
-		}
+		i++;
 	}
-
-	return 0;
-}
-
-int sum()	//opt = 3
-{
-	//sum loader
-	int num, total;
-	total = 0;
-	for (int i = 0; i < 7; i++)
-	{
-		
-		printf("Enter a positive integers\n");
-		scanf_s("%d", &num);
-		total = num + total;
-	}
-	printf("%d", total);
+	
 	return 0;
 }
 
 int main()
 {
-	int opt;
-	printf("\nChoose an operation\n press 1 for Prime number\n press 2 to reverse the number\n press 3 for summation\n press 0 to exit\n");
-	scanf_s("%d", &opt);
-
-	while (opt != 0)
+	//value loader
+	int total = 0, arr[7] = {};
+	for (int i = 0; i < 7; i++)
 	{
-		switch (opt)
-		{
-		case 1:
-			primeFactors();
-			break;
-		case 2:
-			revArray();
-			break;
-		case 3:
-			sum();
-			break;
-		default:
-			printf("Invalid Operation\n");
-			break;
-		}
-
-		
-		printf("Choose an operation\n press 1 for Prime number\n press 2 to reverse the number\n press 3 for summation\n press 0 to exit\n");
-		scanf_s("%d", &opt);
+		printf("Enter element %d: ", i);
+		scanf_s("%d", &arr[i]);
 	}
-	printf("press enter to exit\n");
-	//system("pause");
+	// menu
+	int opt;
+	printf("\nChoose an operation\n press 1 for Prime factors\n press 2 to reverse the number\n press 3 for summation\n press 0 to exit\n");
+	printf(">> ");
+	scanf_s("%d", &opt);
+	switch (opt)
+	{
+	case 1:
+		primeFactors(arr);
+		break;
+	case 2:
+		revArray(arr);
+		break;
+	case 3:
+		total = sum(arr);
+		printf("sum is %d\n", total);
+		break;
+	default:
+		printf("Invalid\n");
+		break;
+	}
 	return 0;
 }
